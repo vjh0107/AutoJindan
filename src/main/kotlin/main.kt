@@ -16,8 +16,8 @@ class ProfileBot : ListenerAdapter() {
             //val order = str.substring(0, 7)
             val jda = event.jda
             if (event.author != event.member) {
-                if (event.message.contentRaw.toString() == "뷰지"){
-                    event.channel.sendMessage("late night sex, so wet, so tight").queue()
+                if (event.message.contentRaw.toString() == "test"){
+                    event.channel.sendMessage("testest").queue()
                 }
             }
             if (event.message.toString().contains("Get")) {
