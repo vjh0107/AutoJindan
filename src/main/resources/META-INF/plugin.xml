@@ -1,0 +1,22 @@
+<idea-plugin>
+    <id>com.vjh0107.untitled6</id>
+    <name>discord bot</name>
+    <vendor email="vjh0107@naver.com" url="http://vjh0107.com">Barcode</vendor>
+
+    <description><![CDATA[
+    b.<br>
+    <em>a</em>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>

@@ -1,0 +1,39 @@
+plugins {
+    id 'org.jetbrains.intellij' version '0.4.21'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.61'
+}
+apply plugin: 'idea'
+
+group 'com.vjh0107'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation 'com.google.firebase:firebase-admin:6.8.1'
+// https://mvnrepository.com/artifact/net.dv8tion/JDA
+    compile 'net.dv8tion:JDA:4.2.0_173'
+    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+
+
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2019.3.3'
+}
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+patchPluginXml {
+    changeNotes """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}
