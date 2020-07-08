@@ -14,10 +14,14 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    implementation 'com.google.firebase:firebase-admin:6.8.1'
-// https://mvnrepository.com/artifact/net.dv8tion/JDA
-    compile 'net.dv8tion:JDA:4.2.0_173'
-    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+    // https://mvnrepository.com/artifact/net.dv8tion/JDA
+    compile group: 'net.dv8tion', name: 'JDA', version: '4.2.0_172'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '3.141.59'
+    // https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
+    compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.32.3'
 
 
 }

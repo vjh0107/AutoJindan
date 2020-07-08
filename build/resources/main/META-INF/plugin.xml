@@ -5,11 +5,11 @@
       &lt;em&gt;most HTML tags may be used&lt;/em&gt;</change-notes>
   <idea-version since-build="193.6494" until-build="193.*"/>
   <id>com.vjh0107.untitled6</id>
-  <name>Plugin display name here</name>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <name>discord bot</name>
+  <vendor email="vjh0107@naver.com" url="http://vjh0107.com">Barcode</vendor>
   <description>
-    Enter short description for your plugin here.&lt;br&gt;
-    &lt;em&gt;most HTML tags may be used&lt;/em&gt;
+    b.&lt;br&gt;
+    &lt;em&gt;a&lt;/em&gt;
     </description>
   <depends>com.intellij.modules.platform</depends>
   <extensions defaultExtensionNs="com.intellij"/>

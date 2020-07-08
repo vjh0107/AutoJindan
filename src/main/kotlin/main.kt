@@ -1,46 +1,32 @@
+import discord.testEmbed
+import discord.events.ProfileBot
 import net.dv8tion.jda.api.AccountType
+import net.dv8tion.jda.api.EmbedBuilder
 import net.dv8tion.jda.api.JDABuilder
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent
 import net.dv8tion.jda.api.hooks.ListenerAdapter
+import org.ini4j.Profile
+import java.awt.Color
 import javax.security.auth.login.LoginException
-//import com.google.firebase.
 
-class ProfileBot : ListenerAdapter() {
-    override fun onMessageReceived(event: MessageReceivedEvent) {
-        println(event.message.toString())
-        try {
+val WEB_DRIVER_ID = "webdriver.chrome.driver";
+val localPATH = "C:\\Users\\vjh01\\Desktop"
+val WEB_DRIVER_PATH = "$localPATH/chromedriver_win32/chromedriver.exe";
 
-            val msg = event.message
-            val mc = event.channel
-            val str = msg.contentRaw
-            //val order = str.substring(0, 7)
-            val jda = event.jda
-            if (event.author != event.member) {
-                if (event.message.contentRaw.toString() == "test"){
-                    event.channel.sendMessage("testest").queue()
-                }
-            }
-            if (event.message.toString().contains("Get")) {
-                val tag = str.substring(8)
-                val usr = jda.getUserByTag(tag)
-                mc.sendMessage(usr!!.avatarUrl!!).queue()
-                println("성공")
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        } finally {
-            println("finally,")
-        }
-    }
+fun main(args: Array<String>) {
+    //init
+    val jda = JDABuilder(AccountType.BOT)
 
-    companion object {
-        @Throws(LoginException::class, InterruptedException::class)
-        @JvmStatic
-        fun main(args: Array<String>) {
-            val jda = JDABuilder(AccountType.BOT)
-            jda.setToken("NzI5NTQxMjY3ODk3NDUwNDk2.XwObVQ.xfkTLGgVRBwBeD91w2UDUA69SKI")
-            jda.addEventListeners(ProfileBot())
-            jda.build()
-        }
-    }
+    //셀레니움 property
+    System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH)
+
+    //토큰설정
+    jda.setToken("NzI5NTQxMjY3ODk3NDUwNDk2.XwObVQ.xfkTLGgVRBwBeD91w2UDUA69SKI")
+
+    //이벤트등록
+    jda.addEventListeners(ProfileBot())
+
+    //봇 login
+    jda.build()
 }
+
