@@ -1,12 +1,10 @@
 package discord.events
 
-import com.sun.jna.StringArray
 import discord.commands.searchCommands
+import discord.invalidCommandEmbed
 import discord.testEmbed
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent
 import net.dv8tion.jda.api.hooks.ListenerAdapter
-import selenium.way.enterInfo
-import kotlin.system.exitProcess
 
 class ProfileBot : ListenerAdapter() {
     override fun onMessageReceived(event: MessageReceivedEvent) {
@@ -21,12 +19,12 @@ class ProfileBot : ListenerAdapter() {
             if (event.channelType.isGuild.not()) {
                 if (event.author != event.member) {
                     if (event.message.contentRaw.contains("자가진단")) {
-                        event.channel.sendMessage(testEmbed()).queue()
+                        //event.channel.sendMessage(testEmbed()).queue()
                         var cospl = content.split(" ")
                         if (cospl.size <= 2) {
                             for(value in cospl) {
                                 if (value != "자가진단") {
-                                    searchCommands(value)
+                                    searchCommands(mc, value)
                                 }
                             }
                         }
