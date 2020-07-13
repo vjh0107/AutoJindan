@@ -1,24 +1,19 @@
-import discord.testEmbed
 import discord.events.ProfileBot
 import net.dv8tion.jda.api.AccountType
-import net.dv8tion.jda.api.EmbedBuilder
 import net.dv8tion.jda.api.JDABuilder
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent
-import net.dv8tion.jda.api.hooks.ListenerAdapter
-import org.ini4j.Profile
-import java.awt.Color
-import javax.security.auth.login.LoginException
+import scheduler.schedulerRegisterer
+import sqlite.sqliteRegisterer
+import java.util.ArrayList
 
-val WEB_DRIVER_ID = "webdriver.chrome.driver";
+
 val localPATH = "C:\\Users\\vjh01\\Desktop"
-val WEB_DRIVER_PATH = "$localPATH/chromedriver_win32/chromedriver.exe";
 
 fun main(args: Array<String>) {
     //init
     val jda = JDABuilder(AccountType.BOT)
 
     //셀레니움 property
-    System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH)
+    System.setProperty("webdriver.chrome.driver", "$localPATH/chromedriver_win32/chromedriver.exe")
 
     //토큰설정
     jda.setToken("NzI5NTQxMjY3ODk3NDUwNDk2.XwObVQ.xfkTLGgVRBwBeD91w2UDUA69SKI")
@@ -28,5 +23,13 @@ fun main(args: Array<String>) {
 
     //봇 login
     jda.build()
+
+    //7:20부터 시작하는 스케쥴러 등록
+    schedulerRegisterer()
+
+    //SQLite [db (생성/접속) 테이블 (생성/접속)]
+    sqliteRegisterer()
+
+
 }
 

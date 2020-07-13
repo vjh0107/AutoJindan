@@ -1,2 +1,0 @@
-package selenium.way
-
